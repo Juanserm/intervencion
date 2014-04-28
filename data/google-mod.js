@@ -1,19 +1,19 @@
 //funcion que ejecuta los cambios en la pagina
 self.port.on("replacePage", function(message){
 
-var img = $(".lazy"); //selector de Jquery
-img.attr (src
+var imgs = $(".lazy"); //selector de Jquery
+
     var foto = "http://placekitten.com/200/300"; //Imagen del gato
      
-    img.parent().css('padding-top','10px'); //ajusta el padding del elemento padre
+	 $.each(imgs, function( index, img ) {
+		//$(img).attr("src", foto);
+		$(img).attr("data-src", foto);
+		//alert( index + ": " + img );
+	});
+    
 
-    //cambia las propiedades del logo
-    //e inyecta la nueva imagen
-    img.css({'background-image': 'url('+foto+')',
-              'background-size': 'auto',
-              'height': '122px',
-              'width': '122px'
-})
+    
+
   console.log("-------------- FF addon");
   $('body').append('<div id="cam"></div>');
 
