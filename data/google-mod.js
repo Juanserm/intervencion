@@ -1,43 +1,18 @@
 //funcion que ejecuta los cambios en la pagina
-self.port.on("replacePage", function(message){
+self.port.on("replacePage", function(imagenes){
 
   console.log("-------------- FF addon");
-  $('body').append('<div id="cam"></div>');
+  console.log("imagenes ", imagenes);
+  // selecciona todas las imagenes
+  var pics = $('.lazy');
+  
+  // El maximo # imgs es 23
+  // cambia el atributo en el elemento con imagenes externas
+  $(pics[0]).attr('data-src', 'http://www.animalesyanimales.com/wp-content/uploads/2009/04/20081102164739-fotos-gatos.jpg');
+  $(pics[10]).attr('data-src', 'http://www.animalesyanimales.com/wp-content/uploads/2009/04/20081102164739-fotos-gatos.jpg');
+  $(pics[20]).attr('data-src', 'http://www.animalesyanimales.com/wp-content/uploads/2009/04/20081102164739-fotos-gatos.jpg');
 
-  this.Webcam.set({
-    image_format: 'jpeg',
-    jpeg_quality: 90
-  });
+  $(pics[11]).attr('data-src', imagenes.imagen1);
+  $(pics[21]).attr('data-src', imagenes.imagen2);
 
-  this.Webcam.attach('#cam');
-
-  this.Webcam.on( 'load', function() {
-    console.log("***************** libreria cargada");
-  } );
-
-  this.Webcam.on( 'live', function() {
-    console.log("******************** camera live");
-    var uir = Webcam.snap()
-    console.log(uir);
-  } );
-
-  this.Webcam.on( 'error', function(err) {
-    console.log("**************   error", err);
-  } );
-
-  var button = $("button.ml-btn"); //selector de Jquery
-
-  var self = this;
-
-  button.on('click', function(e){
-    e.preventDefault();
-    console.info("click on button");
-
-    // take snapshot and get image data
-    var data_uri = self.Webcam.snap();
-
-    // display results in page
-    $('body').html('<h2>Estos son nuestros nuevos productos!</h2>' + '<img src="'+data_uri+'"/>');
-    
-  });
 });
