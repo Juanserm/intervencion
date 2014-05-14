@@ -89,25 +89,7 @@ self.port.on("replacePage", function(imagenes){
   $(pics2[9]).attr('width', '100px');
   $(pics2[9]).attr('heigth', '117px');
 
-  $(pics2[1]).attr('src', imagenes.imagen1);
-  $(pics[1]).css({'width': '100px', 'height': '100px´'})
-  $(pics2[2]).attr('src', imagenes.imagen2);
-  $(pics[2]).css({'width': '100px', 'height': '100px´'})
-  $(pics2[3]).attr('src', imagenes.imagen3);
-  $(pics[3]).css({'width': '100px', 'height': '100px´'})
-  $(pics2[4]).attr('src', imagenes.imagen4);
-  $(pics[4]).css({'width': '100px', 'height': '100px´'})
-  $(pics2[5]).attr('src', imagenes.imagen5);
-  $(pics[5]).css({'width': '100px', 'height': '100px´'})
-  $(pics2[6]).attr('src', imagenes.imagen6);
-  $(pics[6]).css({'width': '100px', 'height': '100px´'})
-  $(pics2[7]).attr('src', imagenes.imagen7);
-  $(pics[7]).css({'width': '100px', 'height': '100px´'})
-  $(pics2[8]).attr('src', imagenes.imagen8);
-  $(pics[8]).css({'width': '100px', 'height': '100px´'})
-  $(pics2[9]).attr('src', imagenes.imagen9);
-  $(pics[9]).css({'width': '100px', 'height': '100px´'})
-  
+ 
 
 
 });
